@@ -32,6 +32,9 @@ export class CountryTableComponent implements OnInit {
           const currencies = country.currencies;
           const currencyKeys = Object.keys(currencies);
           const currencyList = currencyKeys.map((key) => {
+            if (currencies[key].symbol === null) {
+              currencies[key].symbol = '';
+            }
             return `${currencies[key].symbol} ${currencies[key].name}`;
           });
           country.currencyList = currencyList.join(', ');
