@@ -2,10 +2,21 @@
   [kendoGridBinding]="data"
   [pageSize]="pageSize"
   [pageable]="true"
+  [resizable]="true"
   (pageChange)="pageChange($event)"
 >
-<kendo-grid-column field="index" title="Sn"></kendo-grid-column>
-  <kendo-grid-column field="flag.png" title="Flag">
+  <kendo-grid-column
+    field="index"
+    title="Sn"
+    [width]="50"
+    [style]="{ 'text-align': 'right' }"
+  ></kendo-grid-column>
+  <kendo-grid-column
+    field="flag.png"
+    title="Flag"
+    [width]="90"
+    [style]="{ 'text-align': 'center' }"
+  >
     <ng-template kendoGridCellTemplate let-dataItem>
       <img
         [src]="dataItem.flags[1]"
@@ -17,10 +28,14 @@
   <kendo-grid-column
     field="name.common"
     title="Country Name"
+    headerClass="custom-header"
   ></kendo-grid-column>
   <kendo-grid-column field="capital" title="Capital"></kendo-grid-column>
   <kendo-grid-column field="region" title="Region"></kendo-grid-column>
-  <kendo-grid-column field="currencyList" title="Currencies"></kendo-grid-column>
+  <kendo-grid-column
+    field="currencyList"
+    title="Currencies"
+  ></kendo-grid-column>
   <kendo-grid-column field="population" title="Population"></kendo-grid-column>
   <kendo-grid-column field="timezones" title="Time Zones"></kendo-grid-column>
 </kendo-grid>
