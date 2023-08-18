@@ -1,0 +1,26 @@
+<kendo-grid
+  [kendoGridBinding]="data"
+  [pageSize]="pageSize"
+  [pageable]="true"
+  (pageChange)="pageChange($event)"
+>
+<kendo-grid-column field="index" title="Sn"></kendo-grid-column>
+  <kendo-grid-column field="flag.png" title="Flag">
+    <ng-template kendoGridCellTemplate let-dataItem>
+      <img
+        [src]="dataItem.flags[1]"
+        alt="{{ dataItem.name.common }}"
+        height="30"
+        width="50"
+      /> </ng-template
+  ></kendo-grid-column>
+  <kendo-grid-column
+    field="name.common"
+    title="Country Name"
+  ></kendo-grid-column>
+  <kendo-grid-column field="capital" title="Capital"></kendo-grid-column>
+  <kendo-grid-column field="region" title="Region"></kendo-grid-column>
+  <kendo-grid-column field="currencyList" title="Currencies"></kendo-grid-column>
+  <kendo-grid-column field="population" title="Population"></kendo-grid-column>
+  <kendo-grid-column field="timezones" title="Time Zones"></kendo-grid-column>
+</kendo-grid>
